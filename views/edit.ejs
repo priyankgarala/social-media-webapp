@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile</title>
+    <link rel="stylesheet" href="/stylesheets/edit.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+
+  <header>
+    <div id="head">
+        <h1>MediaMingle</h1>
+    </div>
+</header>
+
+    <div id="updatepicture">
+        <img src="http://via.placeholder.com/150x150" alt=""/>
+    </div>
+    <br>
+    <div id="picture">
+    <button id="editbtn">edit picture</button>
+    </div>
+    
+    <h1>Edit Account Details</h1>
+  <div id="container">
+    <form action="/update" method="post" enctype="multipart/form-data">
+        <input id="imageinput" hidden type="file" name="image">
+      <label for="username">Username:</label>
+      <input name="username" type="text" id="username" name="username" required>
+      <br>
+      <label for="password">Password:</label>
+      <input name="password" type="password" id="password" name="password" required>
+      <br>
+      <label for="name">Name:</label>
+      <input name="name" type="text" id="name" name="name" required>
+      <br>
+      <button type="submit">Update Profile</button>
+    </form>
+  </div>
+
+  <footer>
+        
+        <a href="/feed" id="btn"><i class="fa fa-home"></i></a>
+        <a href="/upload" id="btn"><i class="fa fa-plus"></i></a>
+        <a href="/search" id="btn"><i class="fa fa-search"></i></a>
+        <a href="/profile" id="btn"><i class="fa fa-user"></i></a>
+   
+    </footer>
+
+<script>
+ document.querySelector("#editbtn")
+ .addEventListener("click", function(){
+    document.querySelector("#imageinput").click();
+})
+
+    document.querySelector("#updatepicture")
+ .addEventListener("click", function(){
+    document.querySelector("#imageinput").click();
+
+ })
+
+</script>
+
+
+</body>
+</html>

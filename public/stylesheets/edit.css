@@ -1,0 +1,137 @@
+/* edit.css */
+
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+}
+
+header {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1px;
+  height: 17vw;
+  }
+
+header h1 {
+  font-size: 1.8em;
+  font-weight: bold;
+  font-family: 'Garamond';
+  margin-top: 10px;
+}
+
+#updatepicture {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#updatepicture img {
+  border-radius: 50%;
+  cursor: pointer;
+  max-width: 100%; /* Ensure the image doesn't exceed its container */
+}
+
+#picture {
+  text-align: center;
+  margin-top: 10px;
+}
+
+#editbtn {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+h1 {
+  text-align: center;
+}
+
+#container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+form {
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input {
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+button[type="submit"] {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+footer {
+  display: flex;
+  justify-content: space-around;
+  background-color: #333;
+  padding: 15px;
+  color: white;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 5vw;
+  align-items: center;
+}
+
+footer a {
+  color: white;
+  font-size: 1.5em;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+footer a:hover {
+  color: #ddd;
+}
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 600px) {
+  #container {
+      padding: 10px;
+  }
+
+  #updatepicture img {
+      width: 80%; /* Adjust as needed */
+  }
+
+  input {
+      padding: 8px;
+  }
+
+  button[type="submit"] {
+      padding: 8px;
+  }
+}
+
+@media screen and (max-width: 828px) {
+  #container {
+      max-width: 90%;
+  }
+}

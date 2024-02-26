@@ -1,0 +1,159 @@
+/* search.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+  }
+
+
+
+main {
+    flex: 1;
+    padding-bottom: 60px; /* Adjust based on the height of your footer */
+}
+
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1px;
+    height: 11vw;
+}
+
+header h1 {
+    font-size: 1.8em;
+    font-weight: bold;
+    font-family: 'Garamond';
+    margin: 0 auto; /* Add this line to center the text */
+}
+
+
+main {
+    padding: 20px;
+}
+
+.search-container {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+form {
+    display: flex;
+}
+
+#inputusername {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#search-results {
+    margin-top: 20px;
+}
+
+#search-results a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    margin-bottom: 10px; /* Adjust as needed for vertical spacing */
+}
+
+.user-avatar {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.username {
+    font-size: 1.2em;
+    margin: 0;
+}
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    background-color: #333;
+    padding: 15px;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+footer a {
+    color: white;
+    font-size: 1.5em;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #ddd;
+}
+
+.user-results {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Adjust as needed for spacing between items */
+}
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 600px) {
+    header {
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    .search-container {
+        max-width: 100%;
+    }
+
+    #inputusername {
+        padding: 8px;
+    }
+
+    button {
+        padding: 8px;
+    }
+
+    .user-avatar {
+        width: 20px;
+        height: 20px;
+    }
+
+    .username {
+        font-size: 1em;
+    }
+
+    footer {
+        padding: 10px;
+    }
+
+    footer a {
+        font-size: 1.2em;
+    }
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+    <link rel="stylesheet" href="/stylesheets/search.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header>
+        <div id="head">
+            <h1>MediaMingle</h1>
+        </div>
+    </header>
+
+    <main>
+        <div class="search-container">
+            <form action="/search" method="get">
+                <input id="inputusername"  type="text" placeholder="Search..." name="query">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+            <div id="search-results">                
+                <p>Search Results:</p>
+                <div class="user-results">
+                    <!-- Placeholder content for fake user results -->
+                    <!-- You can dynamically populate this area using JavaScript -->
+                </div>
+                
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        
+        <a href="/feed" id="btn"><i class="fa fa-home"></i></a>
+        <a href="/upload" id="btn"><i class="fa fa-plus"></i></a>
+        <a href="/search" id="btn"><i class="fa fa-search"></i></a>
+        <a href="/profile" id="btn"><i class="fa fa-user"></i></a>
+    
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.7/axios.min.js" integrity="sha512-NQfB/bDaB8kaSXF8E77JjhHG5PM6XVRxvHzkZiwl3ddWCEPBa23T76MuWSwAJdMGJnmQqM0VeY9kFszsrBEFrQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+
+        const inp = document.querySelector("#inputusername");
+
+        inp.addEventListener("input", function() {
+            axios.get(`/username/${inp.value}`)
+                .then(function(response) {
+                    const data = response.data;
+
+                    let clutter = "";
+                    
+                    if (data && data.length > 0) {
+                        data.forEach(function(elem) {
+                            clutter += `<a href="/profile">
+                                <img class="user-avatar" src="/images/uploads/${elem.profileImage}" alt="avatar">
+                                <span class="username">@${elem.username}</span><br>
+                            </a>`;
+                        });
+                    } else {
+                        clutter = "<p>No results found</p>";
+                    }
+
+                    document.querySelector("#search-results").innerHTML = clutter;
+                })
+                .catch(function(error) {
+                    console.error("Error fetching data:", error);
+                });
+        });
+    </script>
+</body>
+</html>

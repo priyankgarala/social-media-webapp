@@ -1,0 +1,167 @@
+body, h1, h2, h3, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9; /* Set a background color for the body */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+    padding-bottom: 60px; /* Adjust based on the height of your footer */
+}
+
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+    font-family: 'Garamond';
+}
+
+main {
+    padding: 20px;
+}
+
+/* Common styles for post containers */
+.post-container {
+    background-color: #f8f8f8; /* Adjust the color as needed */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.post-container img {
+    max-width: 100%; /* Make sure images don't overflow post containers */
+    border-radius: 8px 8px 0 0; /* Rounded corners only at the top */
+}
+
+.post-container hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 10px 0;
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.post-header img {
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.post-header h4 {
+    font-size: 1.2em;
+    margin: 0;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.post-header h4:hover {
+    color: #555;
+}
+
+#post-content {
+    padding: 10px;
+}
+
+#post-content img {
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+}
+
+.post-caption h3 {
+    color: #555; /* Adjust the color as needed */
+    margin: 10px 0;
+}
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    background-color: #333;
+    padding: 15px;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+footer a {
+    color: white;
+    font-size: 1.5em;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #ddd;
+}
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 600px) {
+    header {
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    .post-container {
+        max-width: 100%; /* Adjust width for smaller screens */
+    }
+
+    .post-header {
+        padding: 8px;
+    }
+
+    .post-header img {
+        width: 30px; /* Adjust size for smaller screens */
+        height: 30px; /* Adjust size for smaller screens */
+    }
+
+    .post-header h4 {
+        font-size: 1em;
+    }
+
+    #post-content img {
+        margin-top: 8px;
+    }
+
+    .post-caption h3 {
+        font-size: 1em;
+    }
+
+    footer {
+        padding: 10px;
+    }
+
+    footer a {
+        font-size: 1.2em;
+    }
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="/stylesheets/profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+    <header>
+        <div id="head">
+            <h1>MediaMingle</h1>
+        </div>
+    </header>
+
+    
+
+    <div id="picture">
+        <img class="pictureimg" src="/images/uploads/<%=user.profileImage%>" alt=""/>
+        <div id="profileflex">
+    <div id="profileusername">
+        <h3>username: @<%=user.username%></h3>
+    </div> <br>
+    <div id="profilename">
+        <h3>Name: <%=user.name%></h3>
+    </div>
+</div>
+</div>
+<div class="button-container">
+    <button id="darkModeToggle">Toggle Dark Mode</button>
+
+    <form action="/edit" method="get">
+        <button>Edit Profile</button>
+    </form>
+
+    <form action="/logout" method="get">
+        <button>Logout</button>
+    </form>
+</div>
+
+
+    
+
+    <footer>
+        <a href="/feed" id="btn"><i class="fa fa-home"></i></a>
+        <a href="/upload" id="btn"><i class="fa fa-plus"></i></a>
+        <a href="/search" id="btn"><i class="fa fa-search"></i></a>
+        <a href="/profile" id="btn"><i class="fa fa-user"></i></a>
+    </footer>
+
+    <script>
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const body = document.body;
+
+        // Check the user's preference from localStorage
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            body.classList.add('dark-mode');
+        }
+
+        darkModeToggle.addEventListener('click', () => {
+            // Toggle dark mode class
+            body.classList.toggle('dark-mode');
+
+            // Save the user's preference in localStorage
+            if (body.classList.contains('dark-mode')) {
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                localStorage.setItem('darkMode', 'disabled');
+            }
+        });
+    </script>
+
+</body>
+</html>
